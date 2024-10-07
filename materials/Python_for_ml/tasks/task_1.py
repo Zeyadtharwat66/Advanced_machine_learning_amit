@@ -1,4 +1,5 @@
 input=input("Enter Your mail: ")
+input.lower()
 count=0
 if(input.__contains__('@')):
     for x in input:
