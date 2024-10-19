@@ -1,4 +1,5 @@
 # calculator
+
 try:
     options = int(
         input(
@@ -59,14 +60,14 @@ elif options == 2:
         )
     )
     if operation == 1:
-        answer = x1 + x2
+        answer = x1+x2
     elif operation == 2:
-        answer = x1 - x2
+        answer = x1-x2
     elif operation == 3:
-        answer = x1 * x2
+        answer = x1*x2
     elif operation == 4:
         try:
-            answer = x1 / x2
+            answer = x1/x2
         except Exception:
             print("Your Expression has a Math Error")
             exit()
