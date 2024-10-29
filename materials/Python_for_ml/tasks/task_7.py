@@ -5,19 +5,19 @@ class chatbot:
     def __init__(self, paths=""):
         self.paths = paths
 
-    def read_from_location(self):
+    def read_dic_location(self):
         input = open(self.paths, "r")
         w = input.read().splitlines()
         return w
 
     def to_dictionary(self):
-        x = self.read_from_location()
+        x = self.read_dic_location()
         dic = {}
         for i in x:
             if ":" in i:
                 key = i[0 : i.index(":")]
                 dic[key] = (
-                    i[i.index(":") + 3 : i.index("]")].replace('"', "").split(",")
+                    i[ i.index("[")+1 : i.index("]")].replace('"', "").split(",")
                 )
         return dic
 
