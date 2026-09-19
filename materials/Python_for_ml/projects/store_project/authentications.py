@@ -1,24 +1,18 @@
+from pathlib import Path
 import random
 
+ACCOUNTS_FILE = Path(__file__).with_name("Accounts.txt")
 
 class authentications:
     z = {}
 
     def save_in_file(cls):
-        x = open(
-            r"C:\Users\HP\Desktop\Amit\Advanced_machine_learning_amit\materials\Python_for_ml\projects\store_project\Accounts.txt",
-            "w",
-        )
-        x.write(str(cls.z))
+        with ACCOUNTS_FILE.open("w", encoding="utf-8") as x:
+            x.write(str(cls.z))
 
     def check_account_from_file(cls):
-        x = open(
-            r"C:\Users\HP\Desktop\Amit\Advanced_machine_learning_amit\materials\Python_for_ml\projects\store_project\Accounts.txt",
-            "r",
-        )
-        readable = (
-            x.read().replace("{", "").replace("}", "").replace("'", "").split(", ")
-        )
+        with ACCOUNTS_FILE.open("r", encoding="utf-8") as x:
+            readable = x.read().replace("{", "").replace("}", "").replace("'", "").split(", ")
         return readable
 
     def signup(cls, user, password):
